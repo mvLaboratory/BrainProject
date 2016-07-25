@@ -1,4 +1,4 @@
-package com.brainacad.labs.lab2_9.com.brainacad.oop.teststring2;
+package com.brainacad.labs.oop.teststring2;
 
 public class Main {
     public static void main(String[] args) {

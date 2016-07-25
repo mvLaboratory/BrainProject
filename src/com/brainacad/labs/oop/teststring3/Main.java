@@ -1,4 +1,4 @@
-package com.brainacad.labs.lab2_9.com.brainacad.oop.teststring3;
+package com.brainacad.labs.oop.teststring3;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,15 +9,17 @@ public class Main {
         s = s.toLowerCase();
         char[] chars = s.toCharArray();
         String returnStr = "";
-        int index = 1;
+        String checkedString = "";
 
         for (char symbol : chars) {
             s = s.substring(1);
-            if (s.indexOf(symbol) < 0) {
+
+            if (s.indexOf(symbol) < 0 && checkedString.indexOf(symbol) < 0) {
                 returnStr = returnStr + symbol;
             }
-
-            index++;
+            else {
+                checkedString = checkedString + symbol;
+            }
         }
         return returnStr.toCharArray();
     }
