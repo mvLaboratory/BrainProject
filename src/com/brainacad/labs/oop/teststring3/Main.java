@@ -13,7 +13,6 @@ public class Main {
 
         for (char symbol : chars) {
             s = s.substring(1);
-
             if (s.indexOf(symbol) < 0 && checkedString.indexOf(symbol) < 0) {
                 returnStr = returnStr + symbol;
             }
