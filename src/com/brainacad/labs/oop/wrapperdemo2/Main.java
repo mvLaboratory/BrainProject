@@ -3,11 +3,9 @@ package com.brainacad.labs.oop.wrapperdemo2;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(
-                compute(
-                        Byte.valueOf((byte)56), Integer.valueOf(560)
-                )
-        );
+        Long computeResult = (Long) compute(Byte.valueOf((byte)56), Integer.valueOf(560));
+        assert computeResult == (56 + 560) : "Invalid computation!";
+        System.out.println(computeResult);
     }
 
     public static Number compute(Number a, Number b) {
