@@ -6,10 +6,14 @@ public class Main {
 
         try {
             person.setAge(50);
+            //assert false;
         }
         catch (InvalidAgeException e) {
             System.out.println("InvalidAgeException");
             e.printStackTrace();
         }
+//        finally {
+//            System.out.println("this is finnaly");
+//        }
     }
 }
