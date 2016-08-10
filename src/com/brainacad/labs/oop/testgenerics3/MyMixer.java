@@ -9,11 +9,15 @@ public class MyMixer <T> {
         this.arr = arr;
     }
 
-    public T[] shuffle(T[] arr) {
+    public void shuffle() {
         Random randomizer = new Random();
-        for (int i = 0; i < 10; i++) {
-            System.out.println(randomizer.nextInt(10));
+
+
+        for (int i = 0; i < arr.length; i++) {
+            int newIndex = randomizer.nextInt(arr.length);
+            T tmp = arr[i];
+            arr[i] = arr[newIndex];
+            arr[newIndex] = tmp;
         }
-        return arr;
     }
 }
