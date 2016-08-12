@@ -1,9 +1,9 @@
 package com.brainacad.labs.oop.testthread1;
 
-public class MyTimeBomb extends Thread {
+public class MyTimeBomb implements Runnable {
     @Override
     public void run() {
-        for (int i = 10; i >= 0; i--) {
+        for (int i = 10; i > 0; i--) {
             System.out.println(i);
             try {
                 Thread.sleep(1000);
