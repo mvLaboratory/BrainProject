@@ -1,5 +1,6 @@
 package com.brainacad.labs.oop.testthread2;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -12,8 +13,10 @@ public class Main {
             myArray[i] = randomizer.nextInt(ARRAY_SIZE);
         }
 
-        MySumCount counter1 = new MySumCount("Thread1", 10, 500, myArray);
-        MySumCount counter2 = new MySumCount("Thread2", 501, 901, myArray);
+        System.out.println(Arrays.toString(myArray));
+
+        MySumCount counter1 = new MySumCount("Thread1", 0, 3, myArray);
+        MySumCount counter2 = new MySumCount("Thread2", 0, 1, myArray);
 
         Thread counter1Thread = new Thread(counter1);
         Thread counter2Thread = new Thread(counter2);

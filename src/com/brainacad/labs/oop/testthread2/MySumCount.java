@@ -13,6 +13,8 @@ public class MySumCount implements Runnable {
         setStopIndex(stopIndex);
     }
 
+
+
     @Override
     public void run() {
         if (startIndex > stopIndex || startIndex < 0 || stopIndex >= resultArr.length) {
