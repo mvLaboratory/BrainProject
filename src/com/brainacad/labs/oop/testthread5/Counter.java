@@ -1,20 +1,27 @@
 package com.brainacad.labs.oop.testthread5;
 
 public class Counter extends Thread{
+    private Storage storage;
+
+    public Counter(String counterName, Storage storage) {
+        super(counterName);
+        this.storage = storage;
+    }
 
     @Override
     public void run() {
-        for (int i = 0; i < Storage.COUNT_BOUND; i++) {
-            synchronized (this) {
-                Storage.store(Storage.read() + 1);
-
-
+        while (!storage.isFull()) {
+            synchronized (storage) {
+                storage.increment();
                 try {
-                    wait();
-                } catch (InterruptedException e) {
+                    storage.wait();
+                }
+                catch (InterruptedException e) {
 
                 }
             }
         }
+
+        System.out.println(Thread.currentThread().getName() + " #" + Thread.currentThread().getId() + " finished");
     }
 }

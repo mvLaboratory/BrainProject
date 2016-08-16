@@ -1,14 +1,33 @@
 package com.brainacad.labs.oop.testthread5;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Storage {
-    public final static int COUNT_BOUND = 1_000;
-    private static int value;
+    private boolean isReadyToPrint = false;
+    public static final int COUNT_BOUND = 1_000_000;
 
-    public static int read() {
-        return value;
+    public Storage() {
+        this.value = new AtomicInteger(0);
     }
 
-    public static void store(int value) {
-        Storage.value = value;
+    private AtomicInteger value;
+
+    public int read() {
+        isReadyToPrint = false;
+        return value.intValue();
     }
+
+    public void increment() {
+        this.value.getAndIncrement();
+        isReadyToPrint = true;
+    }
+
+    public boolean isFull() {
+        return value.intValue() >= COUNT_BOUND;
+    }
+
+    public boolean isReady() {
+        return isReadyToPrint;
+    }
+
 }
