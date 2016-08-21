@@ -13,14 +13,7 @@ public class Printer extends Thread {
             synchronized (storage) {
                 if (storage.isReady()) {
                     System.out.println(storage.read());
-                    storage.notifyAll();
-
-//                    try {
-//                        sleep(1);
-//                    }
-//                    catch (InterruptedException e) {
-//
-//                    }
+                   // storage.notifyAll();
                 }
 
                 storage.notifyAll();

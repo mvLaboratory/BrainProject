@@ -12,7 +12,7 @@ public class Student implements Runnable {
     @Override
     public void run() {
         synchronized (diningHall) {
-            System.out.print(studentID + ": ");
+            //System.out.print(studentID + ": ");
             diningHall.servePizza();
         }
     }

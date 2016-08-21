@@ -17,7 +17,7 @@ public class Counter extends Thread{
                     storage.wait();
                 }
                 catch (InterruptedException e) {
-
+                    e.printStackTrace();
                 }
             }
         }

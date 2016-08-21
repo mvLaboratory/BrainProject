@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Storage {
     private boolean isReadyToPrint = false;
-    public static final int COUNT_BOUND = 1_000_000;
+    public static final int COUNT_BOUND = 1_0_00;
 
     public Storage() {
         this.value = new AtomicInteger(0);
