@@ -27,19 +27,33 @@ public class lessonSQL {
             statement.execute("Select * From users");
 
             ResultSet res = statement.getResultSet();
-            while (res.next()) {
+            //while (res.next()) {
                 int id = res.getInt("id");
                 String firstName = res.getString("firstName");
                 String lastName = res.getString("lastName");
                 int age = res.getInt("age");
 
                 System.out.println(id + " - " + firstName + " - " + lastName + " - " + age);
+            //}
+
+
+            String query = "SELECT * FROM Item WHERE ID=110";
+            Statement stmt = dbConnection.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next ()) {
+                System.out.println("ID: " + rs.getInt("Id"));
+                System.out.println("Description: " + rs.getString("Descrip"));
+                System.out.println("Price: " + rs.getDouble("Price"));
+                System.out.println("Quantity: " + rs.getInt("Quantity"));
             }
 
         }
         catch (SQLException e) {
+            System.out.println("ddddd");
             e.printStackTrace();
         }
+
+
 
 
 
